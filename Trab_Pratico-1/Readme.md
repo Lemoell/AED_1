@@ -16,5 +16,5 @@ licensePlate = "3S9 t32", words = ["soup", "stamp", "street", "seat", "post", "s
 
 ## Condições 
 
-está funcionando em com letras repetidas.
-código funcionando no leetcode.
+- Está funcionando com letras repetidas. 
+- Código funcionando no leetcode.
