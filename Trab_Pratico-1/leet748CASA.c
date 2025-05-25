@@ -2,10 +2,10 @@
     Lemoel Costa - 23105104
 */
 
-char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
+char* shortestCompletingWord ( char* licensePlate, char** words, int wordsSize ) {
     //inicia o contador de cada letra em 0
     //26 casas para armaenar a contagem do alfabeto de a até b
-    int aparicoes[26] = {0}; 
+    int aparicoes[26] = { 0 }; 
     int i;
     
     /*
@@ -14,11 +14,11 @@ char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
     ============================================
     */
 
-    for(i = 0; licensePlate[i] != '\0'; i++){
-        if((licensePlate[i] >= 'a' && licensePlate[i] <= 'z') || (licensePlate[i] >= 'A' && licensePlate[i] <= 'Z')){
+    for ( i = 0; licensePlate[i] != '\0'; i++ ) {
+        if ( ( licensePlate[i] >= 'a' && licensePlate[i] <= 'z' ) || ( licensePlate[i] >= 'A' && licensePlate[i] <= 'Z' ) ) {
             char letra = licensePlate[i];
             //transforma letras maiusculas em minuscular 
-            letra = tolower(letra);
+            letra = tolower( letra );
             aparicoes[letra - 'a']++;
         }
     }
@@ -33,12 +33,12 @@ char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
     ==============================================
     */
 
-    for(i = 0; i < wordsSize; i++){
-        int aparicoes_das_words[26] = {0};
+    for ( i = 0; i < wordsSize; i++ ) {
+        int aparicoes_das_words[26] = { 0 };
         //usando "y" para percorrer as letras da palavra de num "i"
-        for(y = 0; words[i][y] != '\0'; y++){
+        for ( y = 0; words[i][y] != '\0'; y++ ) {
             char letra = words[i][y];
-            letra = tolower(letra);
+            letra = tolower( letra );
             aparicoes_das_words[letra - 'a']++;
         }
         
@@ -49,8 +49,8 @@ char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
         */
 
         int indice = 1;
-        for(y = 0; y < 26; y++){
-            if(aparicoes[y] > aparicoes_das_words[y]){
+        for ( y = 0; y < 26; y++ ) {
+            if ( aparicoes[y] > aparicoes_das_words[y] ) {
                 indice = 0;
                 break;
             }
@@ -62,8 +62,8 @@ char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
         ========================================================================================
         */
 
-        if(indice){
-            if(pal_certa == NULL || strlen(words[i]) < strlen(pal_certa)){
+        if ( indice ) {
+            if ( pal_certa == NULL || strlen( words[i] ) < strlen( pal_certa ) ) {
                 pal_certa = words[i];
             }
         }
