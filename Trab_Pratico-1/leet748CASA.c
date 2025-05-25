@@ -20,10 +20,6 @@ char* shortestCompletingWord(char* licensePlate, char** words, int wordsSize) {
             aparicoes[letra - 'a']++;
         }
     }
-    
-    ///////////////////////////////////////////////////////////
-    //verificar se aparece as words que tem as mesmas letras//
-    /////////////////////////////////////////////////////////
 
     //nao esta apontando para nada
     char *pal_certa = NULL; 
