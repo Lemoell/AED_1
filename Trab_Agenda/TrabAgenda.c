@@ -172,10 +172,8 @@ int main() {
             pNome[strcspn (pNome, "\n")] = 0;
 
 
-            int *pCurOffset = pProxOffset + 1;
-            *pCurOffset = *pHead;
+            int *pCurOffset = pHead;
 
-            // Loop de busca
             while (*pCurOffset != 0) {
                 char *pNo = (char *)pBuffer + *pCurOffset;
                 int *pProxNo = (int *)pNo;
@@ -188,7 +186,7 @@ int main() {
                     break;
                 }
 
-                *pCurOffset = *pProxNo;
+                pCurOffset = pProxNo;
             }
 
             if (*pCurOffset == 0)
