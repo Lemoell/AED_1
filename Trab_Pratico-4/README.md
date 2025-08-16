@@ -1,4 +1,4 @@
-# TRABALHO - Número de maneiras de reordenar a matriz para obter o mesmo BST
+# TRABALHO - Sort List
 
 Lemoel Costa - 23105104
 
